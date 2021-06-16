@@ -1,12 +1,12 @@
 
 class Componente:
 
-    def __init__(self, ozonio, particula, monoxido_carbono, oxido_nitroso, gas, temperatura, umidade, data):
+    def __init__(self, ozonio, particula, monoxido_carbono, oxido_nitroso, gas_inflamavel, temperatura, umidade, data):
         self.ozonio = ozonio
         self.particula = particula
         self.monoxido_carbono = monoxido_carbono
         self.oxido_nitroso = oxido_nitroso
-        self.gas = gas
+        self.gas_inflamavel = gas_inflamavel
         self.temperatura = temperatura
         self.umidade = umidade
         self.data = data
@@ -35,8 +35,8 @@ class Componente:
     def get_nitroso(self):
         return self.oxido_nitroso
 
-    def set_gas(self, gas):
-        self.gas = gas
+    def set_gas(self, gas_inflamavel):
+        self.gas_inflamavel = gas_inflamavel
 
     def get_gas(self):
         return self.gas
