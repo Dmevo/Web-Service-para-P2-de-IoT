@@ -58,3 +58,15 @@ class Componente:
 
     def get_data(self):
         return self.data
+
+    def toDict(self):
+        return {
+            "ozonio":self.ozonio,
+            "particula":self.particula,
+            "monoxido de carbono":self.monoxido_carbono,
+            "oxido nitroso":self.oxido_nitroso,
+            "gas inflamavel":self.gas_inflamavel,
+            "temperatura":self.temperatura,
+            "umidade":self.umidade,
+            "data":self.data
+        }
