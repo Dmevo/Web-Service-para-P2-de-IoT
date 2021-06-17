@@ -34,3 +34,15 @@ def busca_detector(id):
         if componentes.get_id() == int(id):
             return componentes.toDict()
     return jsonify(""), 404
+
+@app.route("/componentes/data/<data>", methods=['GET'])
+def buscar_data(data):
+    data_lista = []
+    componentes_dict_lista = []
+    for componente in componente_lista:
+        componentes_dict_lista.append(componente.toDict())
+    for componente in componentes_dict_lista:
+        datajson = componente["data"].replace("/", "")
+        if datajson == data:
+            data_lista.append(componente)
+    return jsonify(data_lista)
