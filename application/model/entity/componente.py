@@ -1,7 +1,8 @@
 
 class Componente:
 
-    def __init__(self, ozonio, particula, monoxido_carbono, oxido_nitroso, gas_inflamavel, temperatura, umidade, data):
+    def __init__(self, detector_id, ozonio, particula, monoxido_carbono, oxido_nitroso, gas_inflamavel, temperatura, umidade, data):
+        self.detector_id = detector_id
         self.ozonio = ozonio
         self.particula = particula
         self.monoxido_carbono = monoxido_carbono
@@ -10,6 +11,12 @@ class Componente:
         self.temperatura = temperatura
         self.umidade = umidade
         self.data = data
+
+    def set_id(self, id):
+        self.detector_id = id
+
+    def get_id(self):
+        return self.detector_id
 
     def set_ozonio(self, ozonio):
         self.ozonio = ozonio
@@ -61,12 +68,13 @@ class Componente:
 
     def toDict(self):
         return {
+            "detector id":self.detector_id,
+            "data":self.data,
             "ozonio":self.ozonio,
             "particula":self.particula,
             "monoxido de carbono":self.monoxido_carbono,
             "oxido nitroso":self.oxido_nitroso,
             "gas inflamavel":self.gas_inflamavel,
             "temperatura":self.temperatura,
-            "umidade":self.umidade,
-            "data":self.data
+            "umidade":self.umidade
         }
