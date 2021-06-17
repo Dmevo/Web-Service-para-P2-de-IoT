@@ -27,3 +27,10 @@ def add_componentes():
     componentes = Componente(detector_id, ozonio, particula, carbono, oxido, gas, temperatura, umidade, data)
     componente_lista.append(componentes)
     return componentes.toDict(), 201
+
+@app.route("/componentes/<id>", methods=['GET'])
+def busca_detector(id):
+    for componentes in componente_lista:
+        if componentes.get_id() == int(id):
+            return componentes.toDict()
+    return jsonify(""), 404
